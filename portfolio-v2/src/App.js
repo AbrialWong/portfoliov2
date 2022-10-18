@@ -7,12 +7,21 @@ import {
   Container,
   Avatar,
   Typography,
-  Button
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  Paper,
+  Box,
+  ImageList,
+  ImageListItem
 } from '@mui/material';
 
 //images, resume
 import profile from "./asserts/profile.jpeg";
 import resume from "./asserts/resume.pdf";
+import bake from "./asserts/bake.jpg";
+import design from "./asserts/design.png";
 
 //icons
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -29,9 +38,9 @@ const useStyles = makeStyles()((theme) => {
     // root
     root: {
       backgroundColor: "#f4f4f4",
-      fontFamily: "Suez One",
+      // fontFamily: "Suez One",
     },
-    // navbar
+    // -- navbar --
     navbar: {
       display: "flex",
     },
@@ -41,6 +50,8 @@ const useStyles = makeStyles()((theme) => {
     navbarLink: {
       display: "flex",
       marginRight: "51px",
+      // fontFamily: "Suez One",
+      fontWeight:"bold"
     },
     navbarTxt: {
       marginLeft: "5px",
@@ -48,38 +59,39 @@ const useStyles = makeStyles()((theme) => {
       marginRight: "36px",
       marginBottom: "5px",
       marginTop: "33px",
-      fontWeight:"bolder"
 
     },
-    // content
+    // -- content --
     content: {
       // backgroundColor: "lightyellow"
     },
+    // content (index)
     indexDiv:{
       display: "flex",
       marginTop: "189px",
-      paddingBottom: "135px"
+      paddingBottom: "300px"
     },
     indexImg:{
       flex:1
     },
     indexDesc:{
       flex:1,
-      marginTop: "70px"
+      marginTop: "70px",
+      // fontFamily: "Suez One",
+      fontWeight:"bold"
     },
     indexDescTxt1:{
-      fontSize:"25px",
-      fontFamily: "Suez One",
+      fontSize:"30px",
+      fontWeight:"bold"
     },
     indexDescTxt2:{
-      fontFamily: "Suez One",
       fontSize:"52px",
       color: "#c47f38",
       fontWeight:"bolder"
-
     },
     indexDescTxt3:{
-      fontSize:"30px",
+      fontSize:"20px",
+      fontWeight:"bold"
       // marginTop:"49px"
     },
     indexDescSocial:{
@@ -90,14 +102,34 @@ const useStyles = makeStyles()((theme) => {
       backgroundColor: "#c47f38",
       width: "182px",
       height: "37px",
-      marginTop:"31px"
+      marginTop:"31px",
+      // fontFamily: "Suez One",
+      fontWeight:"bold"
+    },
+    // content (About)
+    aboutDiv:{
+      // fontWeight:"bold",
+      marginLeft:"137px",
+      paddingBottom:"113px"
+    },
+    aboutHeader:{
+      marginLeft:"23px",
+      fontWeight:"bold",
+      paddingBottom:"61px"
+    },
+    aboutContent:{
+      fontWeight:"bold",
+      display: "flex"
     },
 
-    // footer
+    // -- footer --
     footer: {
       // backgroundColor: "palegreen",
       textAlign: "center",
       padding: "10px",
+      fontWeight:"bold",
+      // fontFamily: "Suez One",
+
     },
   };
 });
@@ -105,6 +137,7 @@ const useStyles = makeStyles()((theme) => {
 export const App = () => {
   const { classes } = useStyles(); 
 
+  // to download resume
   const saveFile = () => {
     saveAs(
       resume,
@@ -112,9 +145,24 @@ export const App = () => {
     );
   };
 
+  const itemData = [
+    {
+      img: 'https://images.unsplash.com/photo-1574815963212-14443d0f94be',
+      title: 'Travelling',
+    },
+    {
+      img: bake,
+      title: 'Baking',
+    },
+    {
+      img: design,
+      title: 'Designing',
+    }
+  ];
+
   return (
     <>
-      <div className={classes.root}>
+      <Paper className={classes.root}>
         {/* navbar here */}
         <div className={classes.navbar} id="outer-container">
           <div className={classes.navbarHam}>
@@ -125,11 +173,21 @@ export const App = () => {
             /> */}
           </div>
           <div className={classes.navbarLink}>
-            <div className={classes.navbarTxt}>About</div>
-            <div className={classes.navbarTxt}>Experience</div>
-            <div className={classes.navbarTxt}>Projects</div>
-            <div className={classes.navbarTxt}>Skills</div>
-            <div className={classes.navbarTxt}>Contact</div>
+            <div className={classes.navbarTxt}>
+              <a href="#">About</a>
+            </div>
+            <div className={classes.navbarTxt}>
+              <a href="#">Experience</a>
+            </div>
+            <div className={classes.navbarTxt}>
+              <a href="#">Projects</a>
+            </div>
+            <div className={classes.navbarTxt}>
+              <a href="#">Skills</a>
+            </div>
+            <div className={classes.navbarTxt}>
+              <a href="#">Contact</a>
+            </div>
           </div>
         </div>
         {/* content here */}
@@ -138,7 +196,7 @@ export const App = () => {
           <div className={classes.indexDiv}>
             <div className={classes.indexImg}>
               <Avatar 
-                sx={{ width: 390, height: 391, border: "8px solid #ebded4",borderRadius: "50%", objectFit: "cover", marginLeft:"400px", 
+                sx={{ width: 390, height: 391, border: "8px solid #ebded4",borderRadius: "50%", objectFit: "cover", marginLeft:"450px", 
                 }}
                 src={profile} />
             </div>
@@ -154,17 +212,60 @@ export const App = () => {
             </div>
 
           </div>
-          {/* <div style={{ border: "3px solid red" }}>About page</div>
-          <div style={{ border: "3px solid blue" }}>Experience page</div>
-          <div style={{ border: "3px solid green" }}>Projects page</div>
-          <div style={{ border: "3px solid purple" }}>Skills page</div>
-          <div style={{ border: "3px solid brown" }}>Contact page</div> */}
+          {/* About page */}
+          <div className={classes.aboutDiv}>
+            <Typography variant="h2" className={classes.aboutHeader}>About Me</Typography>
+            <div className={classes.aboutContent}>
+              <Card 
+                sx={{ width: "800px", marginRight: "140px", backgroundColor: "#c47f38"}}
+              >
+                <CardContent>
+                  <Typography variant="h5" sx={{ margin:"22px" }} color="#f4f4f4">
+                  My interest in web development has started when i attended a web development bootcamp on udemy. 
+                  <br/><br/>
+                  I enjoyed building mini projects whenever i learn a new programming skills through online courses
+                  <br/><br/>
+                  I'm always passionate about learning new things, solving problems and adapt to changes. I strongly believes that continuous learning is the key to improvement.
+                  <br/><br/>
+                  With my past experience in the F&B industry has taught me to be detailed orientated, multi task and work under pressure.                  </Typography>
+                </CardContent>
+              </Card>
+              <Card sx={{ width: "600px" , height:"320px", backgroundColor: "#ebded4"}}>
+                <CardContent>
+                <Typography variant="h5" sx={{ margin:"22px" , fontWeight: "bold"}}>
+                   Things i enjoy doing: 
+
+                   <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
+                      {itemData.map((item) => (
+                        <ImageListItem key={item.img} sx={{ marginLeft:"20px" }}>
+                          <img
+                            src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
+                            srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                            alt={item.title}
+                            loading="lazy"
+                            // sx={{padding:"10px"}}
+                          />
+                          <Typography variant="h6" sx={{textAlign:"center", fontWeight: "bold"}}>
+                            {item.title}
+                          </Typography>
+                        </ImageListItem>
+                      ))}
+                  </ImageList>
+                  </Typography>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+          {/* <div style={{ border: "3px solid blue" }}>Experience page</div> */}
+          {/* <div style={{ border: "3px solid green" }}>Projects page</div> */}
+          {/* <div style={{ border: "3px solid purple" }}>Skills page</div> */}
+          {/* <div style={{ border: "3px solid brown" }}>Contact page</div> */}
         </div>
         {/* footer here */}
         {/* <div className={classes.footer}>
           Proudly created by AbrialWong. Copyright @ 2022
         </div> */}
-      </div>
+      </Paper>
     </>
   );
 };
