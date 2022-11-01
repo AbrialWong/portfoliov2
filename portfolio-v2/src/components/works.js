@@ -20,6 +20,7 @@ import onlinecv from "../asserts/online-cv.png";
 import spweb from "../asserts/personal-web.png";
 import shoppingsite from "../asserts/shopping-site.png";
 import employeedash from "../asserts/employee-dash.png";
+import onlinecv2 from "../asserts/onlinecv-2.png";
 
 import { makeStyles } from "tss-react/mui";
 
@@ -161,14 +162,26 @@ export const Works = () => {
                 <Button
                   variant="contained"
                   size="small"
-                  sx={{ backgroundColor: "#c47f38", color: "white" }}
+                  sx={{
+                    backgroundColor: "#c47f38",
+                    color: "white",
+                    textDecoration: "none",
+                  }}
+                  onClick={() =>
+                    (window.location.href =
+                      "https://github.com/AbrialWong/Online-CV")
+                  }
                 >
                   Github
                 </Button>
+
                 <Button
                   variant="contained"
                   size="small"
                   sx={{ backgroundColor: "#c47f38", color: "white" }}
+                  onClick={() =>
+                    (window.location.href = "https://abrialwong.netlify.app/")
+                  }
                 >
                   Live Demo
                 </Button>
@@ -213,6 +226,10 @@ export const Works = () => {
                   variant="contained"
                   size="small"
                   sx={{ backgroundColor: "#c47f38", color: "white" }}
+                  onClick={() =>
+                    (window.location.href =
+                      "https://github.com/AbrialWong/calculator")
+                  }
                 >
                   Github
                 </Button>
@@ -220,6 +237,10 @@ export const Works = () => {
                   variant="contained"
                   size="small"
                   sx={{ backgroundColor: "#c47f38", color: "white" }}
+                  onClick={() =>
+                    (window.location.href =
+                      "https://react-colorful-calculator.netlify.app/")
+                  }
                 >
                   Live Demo
                 </Button>
@@ -265,6 +286,10 @@ export const Works = () => {
                   variant="contained"
                   size="small"
                   sx={{ backgroundColor: "#c47f38", color: "white" }}
+                  onClick={() =>
+                    (window.location.href =
+                      "https://github.com/AbrialWong/contactForm")
+                  }
                 >
                   Github
                 </Button>
@@ -311,6 +336,10 @@ export const Works = () => {
                   variant="contained"
                   size="small"
                   sx={{ backgroundColor: "#c47f38", color: "white" }}
+                  onClick={() =>
+                    (window.location.href =
+                      "https://github.com/AbrialWong/TheSpongeOven")
+                  }
                 >
                   Github
                 </Button>
@@ -358,6 +387,71 @@ export const Works = () => {
                   variant="contained"
                   size="small"
                   sx={{ backgroundColor: "#c47f38", color: "white" }}
+                  onClick={() =>
+                    (window.location.href =
+                      "https://github.com/AbrialWong/employee-dashboard")
+                  }
+                >
+                  Github
+                </Button>
+                <Button
+                  variant="contained"
+                  size="small"
+                  sx={{ backgroundColor: "#c47f38", color: "white" }}
+                  onClick={() =>
+                    (window.location.href =
+                      "https://employee-dashboard-antdesign.vercel.app/")
+                  }
+                >
+                  Live Demo
+                </Button>
+              </CardActions>
+            </Card>
+          </Grid>
+          {/* online cv - v2 */}
+          <Grid item md={3} xl={3}>
+            <Card sx={{ width: 300, backgroundColor: "#ebded4" }}>
+              <CardMedia
+                component="img"
+                width="200"
+                height="207"
+                image={onlinecv2}
+              />
+              <CardContent>
+                <Typography
+                  // variant="h4"
+                  sx={{
+                    // marginLeft: "22px",
+                    // paddingTop: "15px",
+                    fontWeight: "bold",
+                    color: "black",
+                  }}
+                  gutterBottom
+                  variant="h5"
+                  component="div"
+                >
+                  Online CV - V2
+                  <br />
+                  (November 2022)
+                </Typography>
+                <Typography
+                  // variant="h6"
+                  color="Black"
+                >
+                  This is a SPA whereby it will showcase my portfolio, resume,
+                  works. I built it using React and MUI. This website has been
+                  hosted on Vercel.
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button
+                  variant="contained"
+                  size="small"
+                  sx={{ backgroundColor: "#c47f38", color: "white" }}
+                  onClick={() =>
+                    (window.location.href =
+                      "https://github.com/AbrialWong/portfoliov2")
+                  }
                 >
                   Github
                 </Button>

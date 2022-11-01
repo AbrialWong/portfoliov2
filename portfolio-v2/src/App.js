@@ -190,7 +190,7 @@ export const App = () => {
         {/* navbar */}
         <div className={classes.navbar} id="outer-container">
           {/* navbar-hamburger */}
-          <div>navhamburger</div>
+          {/* <div>navhamburger</div> */}
           {/* navbar-links */}
           <div className={classes.navbarLink}>
             <ul>
